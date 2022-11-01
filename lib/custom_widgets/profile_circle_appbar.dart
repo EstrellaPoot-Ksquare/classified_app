@@ -10,22 +10,16 @@ class ProfileCircleAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double appbarHeight = MediaQuery.of(context).padding.top + kToolbarHeight;
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, '/settings');
       },
       child: Container(
-        margin: EdgeInsets.symmetric(
-            vertical: (appbarHeight * 0.2),
-            horizontal: (appbarHeight * 0.6 * 0.2)),
-        width: appbarHeight * 0.6,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: Image.asset(
-            'images/golf-r.jpg',
-            fit: BoxFit.cover,
-          ),
+        margin: const EdgeInsets.symmetric(
+          horizontal: (10),
+        ),
+        child: const CircleAvatar(
+          backgroundImage: AssetImage('images/golf-r.jpg'),
         ),
       ),
     );
